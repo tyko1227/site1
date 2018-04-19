@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+<input type="text" id="target" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    /* 방법 1
+    focus와 blur사이 공백을 두어 다중 프로퍼티 적용 가능 
+    $('#target').on('focus blur', function(e){
+        $('#status').html(e.type);
+    })
+    */
+    /* 방법 2 메소드로 직접 호출 
+    var handler = function(e){
+        $('#status').html(e.type);
+    }
+   $('#target').on({
+        'focus' : function(e){
+ 
+        }, 
+        'blur' : function(e){
+             
+        }
+    }) 
+    */
+    //방법 3 제이쿼리 체이닝 기술로 연결 호출 
+    var handler = function(e){
+        $('#status').html(e.type);
+    }
+    $('#target').on('focus',handler).on('blur',handler);
+</script>
+    </body>
+</html>

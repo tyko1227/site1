@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<!-- 
+innerHTML는 문자열로 자식 노드를 만들 수 있는 기능을 제공한다. 또한 자식 노드의 값을 읽어올 수도 있다. 
+outerHTML은 선택한 엘리먼트를 포함해서 처리된다.
+innerHtml, outerHTML과 다르게 이 API들은 값을 읽을 때는 HTML 코드를 제외한 문자열을 리턴하고, 값을 변경할 때는 HTML의 코드를 그대로 추가한다.
+-->
+</head>
+<body>
+    <ul id="target">
+    <li>HTML</li>
+    <li>CSS</li>
+</ul>
+<input type="button" onclick="get1();" value="get innerHTML" />
+<input type="button" onclick="set1();" value="set innerHTML" />
+<input type="button" onclick="get2();" value="get outerHTML" />
+<input type="button" onclick="set2();" value="set outerHTML" />
+<input type="button" onclick="get3();" value="get innerText" />
+<input type="button" onclick="set3();" value="set innerText" />
+<script>
+    function get1(){
+        var target = document.getElementById('target');
+        alert(target.innerHTML);
+    }
+    function set1(){
+        var target = document.getElementById('target');
+        target.innerHTML = "<li>JavaScript Core</li><li>BOM</li><li>DOM</li>";
+    }
+    function get2(){
+        var target = document.getElementById('target');
+        alert(target.outerHTML);
+    }
+    function set2(){
+        var target = document.getElementById('target');
+        target.outerHTML = "<ol><li>JavaScript Core</li><li>BOM</li><li>DOM</li></ol>";
+    }
+      function get3(){
+        var target = document.getElementById('target');
+        alert(target.innerText);
+    }
+    function set3(){
+        var target = document.getElementById('target');
+        target.innerText = "<li>JavaScript Core</li><li>BOM</li><li>DOM</li>";
+    }
+</script>
+</body>
+</html>

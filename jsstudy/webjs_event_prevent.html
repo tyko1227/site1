@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+<!-- addEventListener 방식:이벤트 객체의 preventDefault 메소드를 실행하면 기본 동작이 취소 -->
+<p>
+            <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+        </p>
+        <p>
+            <a href="http://opentutorials.org">opentutorials</a>
+        </p>
+        <p>
+            <form action="http://opentutorials.org">
+                    <input type="submit" />
+            </form>
+        </p>
+        <script>
+            document.querySelector('a').addEventListener('click', function(event){
+                if(document.getElementById('prevent').checked)
+                    event.preventDefault();
+                    /*[ie9 이하버젼 호환]
+                     event.returnValue를 false  */
+            });
+             
+            document.querySelector('form').addEventListener('submit', function(event){
+                if(document.getElementById('prevent').checked)
+                    event.preventDefault();
+                    /*[ie9 이하버젼 호환]
+                     event.returnValue를 false  */
+            });
+ 
+        </script>
+        </body>
+</html>
+<!-- 인라인 방식:이벤트의 리턴값이 false이면 기본 동작이 취소된다.
+<p>
+    <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+</p>
+<p>
+    <a href="http://opentutorials.org" onclick="if(document.getElementById('prevent').checked) return false;">opentutorials</a>
+</p>
+<p>
+    <form action="http://opentutorials.org" onsubmit="if(document.getElementById('prevent').checked) return false;">
+        <input type="submit" />
+    </form>
+</p>
+-->
+<!-- property 방식: 리턴 값이 false이면 기본동작이 취소된다
+<p>
+    <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+</p>
+<p>
+    <a href="http://opentutorials.org">opentutorials</a>
+</p>
+<p>
+    <form action="http://opentutorials.org">
+            <input type="submit" />
+    </form>
+</p>
+<script>
+    document.querySelector('a').onclick = function(event){
+        if(document.getElementById('prevent').checked)
+            return false;
+    };
+     
+    document.querySelector('form').onclick = function(event){
+        if(document.getElementById('prevent').checked)
+            return false;
+    };
+ 
+</script>
+-->

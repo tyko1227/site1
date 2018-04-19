@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!--  
+submit은 폼의 정보를 서버로 전송하는 명령인 submit시에 일어난다.
+form 태그에 적용된다.
+아래 예제는 전송 전에 텍스트 필드에 값이 입력 되었는지를 확인한다. 만약 값이 입력되지 않았다면 전송을 중단한다.
+-->
+<form id="target" action="result.html">
+    <label for="name">name</label>
+    <input id="name" type="name" />
+    <input type="submit" />
+</form>
+<script>
+var t = document.getElementById('target');
+t.addEventListener('submit', function(event){
+    if(document.getElementById('name').value.length === 0){
+        alert('Name 필드의 값이 누락 되었습니다');
+        event.preventDefault();
+    }
+});
+</script>
+<!--
+change는 폼 컨트롤의 값이 변경 되었을 때 발생하는 이벤트다.
+input(text,radio,checkbox), textarea, select 태그에 적용된다.
+-->
+<br>
+<p id="result"></p>
+<input id="target1" type="name" />
+<script>
+var y = document.getElementById('target1');
+    y.addEventListener('change', function(event){    document.getElementById('result').innerHTML=event.target.value;
+    });
+</script>
+<!--
+focus는 엘리먼트에 포커스가 생겼을 때, blur은 포커스가 사라졌을 때 발생하는 이벤트다.
+다음 태그를 제외한 모든 태그에서 발생한다. <base>, <bdo>, <br>, <head>, <html>, <iframe>, <meta>, <param>, <script>, <style>, <title>
+-->
+<br>
+<input id="target3" type="name" />
+<script>
+var k = document.getElementById('target3');
+k.addEventListener('blur', function(event){
+    alert('blur');  
+});
+k.addEventListener('focus', function(event){
+    alert('focus'); 
+});
+</script>
+</body>
+</html>

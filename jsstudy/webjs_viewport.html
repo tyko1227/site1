@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+위의 그림처럼 뷰포트는 문서의 내용 중 사용자에게 보여주는 영역을 의미한다. 이에 따라서 문서의 좌표가 있고 뷰포트의 자표가 있다. 우리가 위에서 살펴본 getBoundingClientRect는 viewport의 좌표를 사용한다. 
+
+아래 예제를 실행해보면 1초에 한번씩 getBoundingClientRect의 top 속성과 window.pageYOffset의 값이 출력된다. (실행)
+-->
+    <style>
+     body{
+        padding:0;
+        margin:0;
+    }
+    div{
+        border:50px solid #1065e6;
+        padding:50px;
+        margin:50px;
+    }
+    #target{
+        width:100px;
+        height:2000px;
+    }
+    </style>
+</head>
+<body>
+ <div>
+        <div id="target">
+            Coding
+        </div>
+    </div>
+ 
+<script>
+var t = document.getElementById('target');
+setInterval(function(){
+    console.log('getBoundingClientRect : ', t.getBoundingClientRect().top, 'pageYOffset:', window.pageYOffset);
+}, 1000)
+</script>
+</body>
+</html>

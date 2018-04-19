@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    	 <input type="button" onclick="location.href = 'http://naver.com';" value="네이버로가기" />
+        <script>
+        	//아래는 현재 윈도우의 문서가 위치하는 URL을 알아내는 방법이다.
+            document.write(location.toString(), location.href+'<br>');
+            //location 객체는 URL을 의미에 따라서 별도의 프로퍼티로 제공하고 있다. 
+            document.write(location.protocol, location.host, location.port, location.pathname, location.search, location.hash+'<br>');
+            //아래 코드는 현재 문서를 http://egoing.net으로 이동한다.
+           // location.href = 'http://egoing.net';
+            //location = 'http://egoing.net';
+            //location.reload();
+        </script>
+    </body>
+</html>
+ 

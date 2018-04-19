@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    #demo{width:200px;float: left; margin-top:120px;}
+    #execute{float: left; margin:0; font-size:0.9em;}
+    #execute{padding-left: 5px}
+    #execute li{list-style: none}
+    #execute pre{border:1px solid gray; padding:10px;}
+    </style>
+</head>
+<body>
+<<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+</ul>
+<script>
+    var li = document.getElementById('active');
+    document.write(li.constructor.name+'<br>');//HTMLLIElement 
+    var lis = document.getElementsByTagName('li');
+    document.write(lis.constructor.name);//HTMLCollection
+</script>
+</body>
+</html>

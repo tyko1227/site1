@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    
+</head>
+<body>
+<script>
+function Person(name){
+    this.name = name;
+}
+Person.prototype.name=null;
+Person.prototype.introduce = function(){
+    return 'My Job is '+this.name; 
+}
+ 
+function Planner(name){
+    this.name = name;
+}
+Planner.prototype = new Person();
+Planner.prototype.coding = function(){
+    return "Web Planner";
+}
+function Designer(name){
+    this.name = name;
+}
+Designer.prototype = new Person();
+Designer.prototype.coding = function(){
+    return "Web Designer";
+}
+
+var p1 = new Planner('Planner');
+var p2 = new Designer('Designer');
+document.write(p1.introduce()+"<br />");
+document.write(p1.coding()+"<br />");
+document.write(p2.introduce()+"<br />");
+document.write(p2.coding()+"<br />");
+</script>
+</body>
+</html>

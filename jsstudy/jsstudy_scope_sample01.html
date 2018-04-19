@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    
+</head>
+<body>
+<script>
+  		MYAPP = {}
+		MYAPP.calculator = {
+		'left' : null,
+		'right' : null
+		}
+		MYAPP.coordinate = {
+    	'left' : null,
+    	'right' : null
+		}
+ 
+MYAPP.calculator.left = 10;
+MYAPP.calculator.right = 20;
+function sum(){
+    return MYAPP.calculator.left + MYAPP.calculator.right;
+	}
+document.write(sum());
+// 익명함수로 대체한 방법
+// (function(){
+//     var MYAPP = {}
+//     MYAPP.calculator = {
+//         'left' : null,
+//         'right' : null
+//     }
+//     MYAPP.coordinate = {
+//         'left' : null,
+//         'right' : null
+//     }
+//     MYAPP.calculator.left = 10;
+//     MYAPP.calculator.right = 20;
+//     function sum(){
+//         return MYAPP.calculator.left + MYAPP.calculator.right;
+//     }
+//     document.write(sum());
+// }())
+</script>
+</body>
+</html>

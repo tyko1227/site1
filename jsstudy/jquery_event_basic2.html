@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <ul>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+</ul>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    //on api의 중간 a,li 선택자는 ul에 이벤트가 걸려도 a,li만 이벤트가 걸림  
+    $('ul').on('click','a, li', function(event){
+        console.log(this.tagName);
+    })
+</script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<!--웹페이지를 프로그래밍적으로 제어하기 위해서는 웹페이지의 모든 요소에 대한 처리가 끝나야 한다. 이것을 알려주는 이벤트가 load, DOMContentLoaded이다.-->
+    <script>
+        window.addEventListener('load', function(){
+            var t = document.getElementById('target');
+            console.log(t);
+        })
+        /* [ie9] 아래의 메소드는 이상만 지원함
+        window.addEventListener('DOMContentLoaded', function(){
+                console.log('DOMContentLoaded');
+            })
+        */
+    </script>
+</head>
+<body>
+    <p id="target">Hello</p>
+</body>
+</html>

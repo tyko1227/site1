@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+  <ul>
+    <li>html</li>
+    <li>css</li>
+    <li id="active">JavaScript</li>
+</ul>
+<script>
+    //문서에서 id는 단 하나만 등장할 수 있는 식별자다. 아래 예제는 id의 값을 읽고 변경하는 방법을 보여준다
+var active = document.getElementById('active');
+console.log(active.id);//active의 아이디를 검색
+active.id = 'deactive';//active의 아이디를 변경 
+console.log(active.id);//변경된 아이디 검색
+</script>
+    </body>
+</html>

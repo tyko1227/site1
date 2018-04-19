@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+<input type="text" id="target"></textarea>
+<input id="remove"  type="button" value="remove" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+  var handler = function(e){
+    $('#status').text(e.type+Math.random());
+  };
+  $('#target').on('focus blur', handler)
+  $('#remove').on('click' , function(e){
+    /* focus만 지울때  
+    $('#target').off('focus');
+    */
+    // 두번째 인자에 handler까지 넣으면 메소드까지 중지 
+    $('#target').off('focus blur', handler);
+    console.log(32);
+  })
+</script>
+    </body>
+</html>

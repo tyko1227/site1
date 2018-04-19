@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    
+</head>
+<body>
+<script>
+  var o = {}
+var p = {}
+function func(){
+    switch(this){
+        case o:
+            document.write('o<br />');
+            break;
+        case p:
+            document.write('p<br />');
+            break;
+        case window:
+            document.write('window<br />');
+            break;          
+    }
+}
+//함수만 호출시 전역객체는 window이므로 윈도우가 출력
+func();
+func.apply(o);
+func.apply(p);
+</script>
+</body>
+</html>
